@@ -332,6 +332,27 @@ body {
 
 /* main end */
 /* about us */
+.about-us-right-anim {
+  -webkit-animation: aboutUsFont .8s ease-in;
+          animation: aboutUsFont .8s ease-in;
+}
+
+.about-us-left-imgAnim {
+  -webkit-animation: aboutUsImg .8s ease-in;
+          animation: aboutUsImg .8s ease-in;
+  overflow: hidden;
+  border-radius: 30px;
+  -webkit-transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out;
+}
+
+.about-us-left-imgAnim:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+}
+
 .about-us {
   height: 85vh;
   background-color: #262626;
@@ -344,33 +365,43 @@ body {
           align-items: center;
   letter-spacing: 1px;
   line-height: 30px;
+  padding-left: 80px;
 }
 
 .about-us-left {
   width: 40%;
-  padding-left: 80px;
-}
-
-.about-us-left-image {
   overflow: hidden;
   border-radius: 30px;
 }
 
-.about-us-left img {
-  width: 100%;
-  opacity: .85;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
+.about-us-left-image {
+  opacity: 0;
 }
 
-.about-us-left img:hover {
-  opacity: 1;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  cursor: pointer;
+.about-us-left img {
+  width: 100%;
+}
+
+@-webkit-keyframes aboutUsImg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .85;
+  }
+}
+
+@keyframes aboutUsImg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .85;
+  }
 }
 
 .about-us-right {
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,9 +420,45 @@ body {
   color: #F0F0F0;
 }
 
+@-webkit-keyframes aboutUsFont {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0px;
+  }
+}
+
+@keyframes aboutUsFont {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0px;
+  }
+}
+
 .about-us-right-heading {
   font-family: "Nanum Myeongjo", serif;
   font-size: 43px;
+}
+
+.about-us-right-heading-line {
+  width: 250px;
+  height: 2px;
+  background-color: goldenrod;
 }
 
 .about-us-right-main {
